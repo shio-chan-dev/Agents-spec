@@ -1,66 +1,120 @@
 # agents-spec-repo
 
 ## 📘 项目介绍
-agents-spec-repo 是一个用于管理 AI Agents 在不同工程角色下的行为规范与代码生成规则的项目。目标不是写业务代码，而是定义：
-- AI 如何作为后端/前端/测试工程师写代码
-- 不同场景下应使用的架构方法论
-- 生成代码必须遵守的工程规则、风格与边界
+agents-spec-repo 用于管理 AI Agents 在不同工程/产品角色下的行为规范与代码生成规则。目标不是写业务代码，而是提供角色化规范，确保输出一致、专业、可控。
 
 ## 🎯 为什么需要这个仓库？
-- 现代团队会同时使用 AI 作为文档助手、代码生成助手、单元测试生成器、架构设计辅助工具、多智能体协作框架中的子 Agent
-- 缺少统一规范会导致风格混乱、业务与架构不一致、测试不可靠、行为不一致以及潜在安全风险
-- 通过角色分离（Role-Based AI Behavior），保证 AI 输出稳定、专业、可控
+- AI 同时承担文档助手、代码生成、测试生成、架构辅助、多智能体子角色等任务，需要统一规范
+- 缺少规范会导致风格混乱、架构不一致、测试质量下滑、行为不可控及安全风险
+- 通过角色分离（Role-Based AI Behavior）让输出稳定、专业，便于审计与扩展
 
 ## 📁 仓库目录结构
 ```text
 agents-spec-repo/
-  ├── AGENTS.md                # 根级规范：权限、写文件规则、模式总定义
-  ├── README.md                # 当前项目说明
-  ├── agent-specs/
-  │     ├── backend/
-  │     │     └── AGENTS.md    # 后端工程师规范
-  │     ├── frontend/
-  │     │     └── AGENTS.md    # 前端工程师规范
-  │     ├── testing/
-  │     │     └── AGENTS.md    # 测试工程师规范
-  │     ├── devops/
-  │     │     └── AGENTS.md    # DevOps/SRE 规范（预留）
-  │     ├── ai/
-  │     │     └── AGENTS.md    # AI 工程师规范（预留）
-  │     ├── security/
-  │           └── AGENTS.md    # 安全工程规范（预留）
-  └── scripts/
-        └── create_agents_repo.sh   # 自动脚本（可选）
+  ├── AGENTS.md
+  ├── README.md
+  └── agent-specs/
+        ├── engineering/           # 后端、前端、全栈、移动、客户端、架构、平台、系统、SDK
+        ├── qa/                    # QA/自动化/性能/安全测试
+        ├── data/                  # 数据分析/工程/科学/平台/MLOps
+        ├── ai-advanced/           # LLM/Prompt/Agent/评估/训练
+        ├── design/                # UI/UX/交互/设计系统
+        ├── infra/                 # DevOps/SRE/云/安全/网络/DBA/发布/运维
+        ├── product/               # PM/PO/项目经理/Scrum Master
+        └── leadership/            # Tech Lead/Engineering Manager/CTO
 ```
 
-## 🧩 已实现角色规范
-| 角色 | 规范文件 | 大师级方法论来源 |
+## 角色与规范索引
+### 🧑‍💻 工程开发类（Engineering Roles）
+| 角色 | 职责 | AGENTS 路径 |
 | --- | --- | --- |
-| 后端工程师 | agent-specs/backend/AGENTS.md | Clean Architecture（Uncle Bob）、DDD（Eric Evans）、Enterprise Patterns（Fowler） |
-| 前端工程师 | agent-specs/frontend/AGENTS.md | Dan Abramov、Evan You、Kent C. Dodds、Ryan Florence |
-| 测试工程师 | agent-specs/testing/AGENTS.md | Kent Beck（TDD）、Gerard Meszaros（Test Patterns）、Fowler、Kent C. Dodds |
+| 后端工程师 | 业务逻辑、数据库、服务端架构、API | `agent-specs/engineering/backend/AGENTS.md` |
+| 前端工程师 | UI、交互、页面与组件、Web 构建 | `agent-specs/engineering/frontend/AGENTS.md` |
+| 全栈工程师 | 跨前后端交付与集成 | `agent-specs/engineering/fullstack/AGENTS.md` |
+| 移动端工程师 | 原生移动端（iOS/Android） | `agent-specs/engineering/ios/AGENTS.md` / `agent-specs/engineering/android/AGENTS.md` / `agent-specs/engineering/mobile/AGENTS.md` |
+| 客户端工程师 | Flutter/React Native 等跨端客户端 | `agent-specs/engineering/client/AGENTS.md` |
+| 架构师 | 整体系统架构、技术选型、规范指导 | `agent-specs/engineering/architecture/AGENTS.md` |
+| 平台工程师 | 内部平台、CI/CD、工程工具、统一框架 | `agent-specs/engineering/platform/AGENTS.md` |
+| 系统工程师 | 底层系统设计（Linux、网络、内核调优） | `agent-specs/engineering/system/AGENTS.md` |
+| DevOps 工程师 | 自动化部署、流水线、基础设施即代码 | `agent-specs/infra/devops/AGENTS.md` |
+| SRE | 监控、日志、报警、容灾、可靠性 | `agent-specs/infra/sre/AGENTS.md` |
+| 安全工程师 | 安全审计、渗透、安全防护、密钥体系 | `agent-specs/infra/security/AGENTS.md` |
+| 云工程师 | AWS/GCP/Azure 云架构与优化 | `agent-specs/infra/cloud-engineer/AGENTS.md` |
+| API / SDK 工程师 | API 设计、SDK 打包、集成体验 | `agent-specs/engineering/sdk/AGENTS.md` |
 
-### 预留角色（待未来集成）
-- DevOps / SRE / Infra
-- AI 工程师（LLM、RAG、Agent Orchestration）
-- Security / 渗透测试工程师
-- 数据工程师 / 数据科学家
+### 🧪 质量与测试类（QA & Testing）
+| 角色 | 职责 | AGENTS 路径 |
+| --- | --- | --- |
+| 测试工程师 | 设计测试用例，手动/自动验证质量 | `agent-specs/qa/testing/AGENTS.md` |
+| 自动化测试工程师 | 编写 E2E/集成/单测脚本（Cypress/Playwright/Jest 等） | `agent-specs/qa/automation-qa/AGENTS.md` |
+| 测试架构师 | 设计测试框架、测试平台、质量体系 | `agent-specs/qa/test-architect/AGENTS.md` |
+| 性能测试工程师 | 压测、容量预测、性能瓶颈分析 | `agent-specs/qa/performance-test/AGENTS.md` |
+| 安全测试工程师 | 渗透测试、漏洞扫描、安全验证 | `agent-specs/qa/security-test/AGENTS.md` |
+
+### 📊 数据相关角色（Data Roles）
+| 角色 | 职责 | AGENTS 路径 |
+| --- | --- | --- |
+| 数据分析师 | 分析数据、产出业务洞察 | `agent-specs/data/data-analyst/AGENTS.md` |
+| 数据科学家 | 建模、实验、预测分析 | `agent-specs/data/data-scientist/AGENTS.md` |
+| 数据工程师 | 构建 ETL、数据流、数据仓库 | `agent-specs/data/data-engineer/AGENTS.md` |
+| 数据平台工程师 | 大数据平台、湖仓、数据治理 | `agent-specs/data/data-platform-engineer/AGENTS.md` |
+| MLOps / ML 工程师 | 模型部署、监控、漂移治理 | `agent-specs/data/mlops-engineer/AGENTS.md` |
+
+### 🤖 AI 相关角色（AI/LLM Roles）
+| 角色 | 职责 | AGENTS 路径 |
+| --- | --- | --- |
+| AI 工程师 / LLM Engineer | 构建 AI pipeline、RAG、Prompt 工程 | `agent-specs/ai-advanced/llm-engineer/AGENTS.md` |
+| Prompt Engineer | 设计与优化提示，提升模型行为 | `agent-specs/ai-advanced/prompt-engineer/AGENTS.md` |
+| AI Agents 编排工程师 | 多智能体系统、调度策略、上下文框架 | `agent-specs/ai-advanced/agent-orchestrator/AGENTS.md` |
+| AI 评估工程师 | 模型评测、对齐、安全性验证 | `agent-specs/ai-advanced/ai-evaluator/AGENTS.md` |
+| 模型训练工程师 | 预训练、微调、蒸馏流程 | `agent-specs/ai-advanced/model-training-engineer/AGENTS.md` |
+| （附）LLM Engineer 深入版 | 细分的 AI 子规范 | `agent-specs/ai-advanced/llm-engineer/ai/AGENTS.md` |
+
+### 🧭 产品与项目类（Product & Project）
+| 角色 | 职责 | AGENTS 路径 |
+| --- | --- | --- |
+| 产品经理 | 定义需求、路线图、功能优先级 | `agent-specs/product/product-manager/AGENTS.md` |
+| 产品负责人 | 拥有业务方向与迭代决策权 | `agent-specs/product/product-owner/AGENTS.md` |
+| 项目经理 | 协调团队、排期、进度管理 | `agent-specs/product/project-manager/AGENTS.md` |
+| Scrum Master | 敏捷流程、站会、迭代仪式 | `agent-specs/product/scrum-master/AGENTS.md` |
+
+### 🎨 设计与用户体验类（Design & UX）
+| 角色 | 职责 | AGENTS 路径 |
+| --- | --- | --- |
+| UI 设计师 | 界面视觉稿、组件视觉规范 | `agent-specs/design/ui-designer/AGENTS.md` |
+| UX 设计师 | 用户研究、体验策略、信息架构 | `agent-specs/design/ux-designer/AGENTS.md` |
+| 交互设计师 | 交互流程、操作路径、可用性 | `agent-specs/design/interaction-designer/AGENTS.md` |
+| 设计系统工程师 | 组件库、主题样式、设计系统工程化 | `agent-specs/design/design-system-engineer/AGENTS.md` |
+
+### 📦 运维、发布与基础设施类（Ops & Infra）
+| 角色 | 职责 | AGENTS 路径 |
+| --- | --- | --- |
+| 运维工程师 | 服务器、生产环境、部署 | `agent-specs/infra/ops-engineer/AGENTS.md` |
+| 发布工程师 | 发布流程、版本控制、变更管理 | `agent-specs/infra/release-engineer/AGENTS.md` |
+| 网络工程师 | 网络架构、CDN、路由与安全 | `agent-specs/infra/network-engineer/AGENTS.md` |
+| 数据库管理员 | 数据库调优、备份恢复、查询优化 | `agent-specs/infra/database-admin/AGENTS.md` |
+
+### 💎 团队高级角色（Leadership）
+| 角色 | 职责 | AGENTS 路径 |
+| --- | --- | --- |
+| 技术负责人 / Tech Lead | 技术决策、代码质量、架构评审 | `agent-specs/leadership/tech-lead/AGENTS.md` |
+| 工程经理 | 团队管理、绩效、招聘、成长 | `agent-specs/leadership/engineering-manager/AGENTS.md` |
+| CTO | 技术战略方向、技术体系建设 | `agent-specs/leadership/cto/AGENTS.md` |
+
+### 🧬 待补充角色
+- 技术文档工程师（Technical Writer）— AGENTS.md 待补充
+- 风险与合规工程师（Risk & Compliance Engineer）— AGENTS.md 待补充
+- 技术支持工程师（Support Engineer）— AGENTS.md 待补充
 
 ## 🛠️ 如何使用这个仓库？
 ### 对于人类开发者
-- 查看 AI 行为规范，定义团队级编码标准与工程文化
+- 按角色查阅对应 `AGENTS.md`，定义团队级规范与工程文化
 - 控制 AI 在不同角色下的生成风格，审核并改进 AI 使用策略
 - 适用于 ChatGPT/Claude 协作、多智能体系统、企业内 AI 助手体系
 
 ### 对于 AI Agents
-- 扮演某个工程角色时必须读取对应目录下的 `AGENTS.md`
-- 输出必须严格遵循该角色规范，禁止跨角色行为
-- 应体现对应大师的工程方法论
-
-### 角色应用示例
-- 后端任务 → 参考 `agent-specs/backend/AGENTS.md`，使用 Clean Architecture，严格分层，遵循依赖倒置（DIP）
-- 前端任务 → 参考 `agent-specs/frontend/AGENTS.md`，单向数据流、最小状态、组件拆分、像 Dan Abramov 那样写代码
-- 测试任务 → 参考 `agent-specs/testing/AGENTS.md`，AAA 模式、单一断言原则、以用户行为为测试目标，模拟外部依赖而非业务
+- 执行任务前读取对应目录下的 `AGENTS.md`，禁止跨角色行为
+- 输出必须符合该角色规范，并体现对应方法论与工程原则
 
 ## 📜 规范哲学：大师来源说明
 1. Clean Architecture（Robert C. Martin）：依赖倒置、分层隔离、纯净业务逻辑
@@ -69,16 +123,8 @@ agents-spec-repo/
 4. 现代前端哲学（Dan Abramov / Evan You / Kent Dodds）：声明式 UI、最小状态、可组合逻辑、像用户那样测试
 5. 测试大师方法论（Kent Beck / Gerard Meszaros）：TDD、AAA、测试反模式识别
 
-## 🧱 扩展与新增角色规范
-- `mkdir -p agent-specs/<role>/`
-- `touch agent-specs/<role>/AGENTS.md`
-- 每个角色一个独立规范文件，互不干扰，方便团队扩展
-
 ## 🌱 Roadmap（发展计划）
-- 添加 DevOps 规范
-- 添加 Security 规范
-- 添加 Data Engineering 规范
-- 添加 AI 工程师规范
+- 添加更多角色规范或补充缺失的 AGENTS.md
 - 加入角色能力矩阵（RACI Matrix）
 - 提供 JSON 格式的规范输出供工具读取
 - 发布 VS Code 插件自动提示 AI 规范
