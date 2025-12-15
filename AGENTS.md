@@ -107,6 +107,20 @@ AI Agents 禁止：
 
 AI 必须默认使用 文档模式（Documentation-Only Mode），只输出文本，不修改文件。
 
+例外（团队工作日志）：
+
+在未获得任何写入授权时，AI 仍被允许对根目录 `work_log.md` 进行有限写入，用于记录“文件写入类工作”的协作痕迹；除 `work_log.md` 外仍必须保持只输出文本、不修改任何文件。
+
+不要求记录的情况（无需更新 `work_log.md`）：
+
+- 仅阅读文件/信息收集（read-only）
+- 仅对话讨论/方案建议/代码审查意见（不落盘）
+
+允许的写入范围：
+
+- `## Current Status (Kanban)`：仅允许更新“自己 agent.id 对应的块”（不得改动他人块；块以 `### <agent.id>` 标题为边界）。
+- `## Entries`：只允许“追加写入（append-only）”，不得改写历史条目。
+
 如果用户的请求带歧义
 
 AI 必须先确认：
@@ -138,6 +152,69 @@ AI 在执行文件修改时（限文档）必须：
 说明修改目的
 
 等待用户确认（可选但推荐）
+
+---
+
+🗒 团队工作日志（根目录 `work_log.md`，AI 可写）
+
+目标：把多智能体（以及人类负责人）当作“团队成员”，在统一日志中持续记录角色分工、决策与进展，便于协作与交接。
+
+基本规则（强制）：
+
+1) 根目录必须存在 `work_log.md`。
+2) 根目录建议提供 `work_log_template.md`，用于跨项目复用条目模板与看板结构。
+3) `work_log.md` 应包含两个区域：
+   - `## Current Status (Kanban)`：看板区（可原地更新），用于“一眼看现在”
+   - `## Entries`：历史区（append-only），用于“可追溯记录”
+4) 仅在发生“文件写入类行为”时，才要求记录与更新 `work_log.md`；纯阅读/纯对话不要求记录。
+5) 文件写入类行为包括：创建/修改/删除/移动/重命名任何文件（无论是文档还是代码；以实际落盘为准）。
+6) 当发生文件写入类行为时：
+   - 开始写入前：更新 `## Current Status (Kanban)` 中自己对应的块（doing/next/blockers/updated）
+   - 写入完成后：向 `## Entries` 追加一条记录（append-only），并更新自己对应的看板块到最新状态
+6) 人类项目负责人也应使用同一格式记录关键决策/指令/验收结论（`agent.id` 建议使用 `human/<name>`，例如 `human/Jean`）。
+7) 每条记录必须使用统一结构，并满足“必填字段”要求；复杂任务必须补充决策、风险与验收口径。
+
+记录格式（建议使用 YAML 条目，直接追加到文件末尾）：
+
+- `timestamp`：ISO 8601（例如 `2025-12-15T10:30:00+08:00`）
+- `agent`（对象）
+  - `id`：由成员自行设置的唯一标识（对同一成员保持固定）
+  - `role`：本次职责/职位（建议参考 `README.md` 的“角色与规范索引”中的角色命名）
+- `content`（对象）
+  - 必填：`objective`、`context`、`scope`、`plan`、`status`
+  - `status` 必须包含：`doing`、`next`、`done`
+  - 选填但推荐：`decisions`、`risks`、`blockers`、`validation`、`artifacts`、`handoff`
+
+`agent.id` 命名体系（用于避免冲突，强制遵守）：
+
+原则：
+
+- 必须全仓库唯一（同一时刻不允许两名成员复用同一个 `agent.id`）。
+- 必须稳定：同一成员在整个项目周期内保持不变。
+- 必须可读：建议从“角色（参考 README）+ 编号/昵称”构造。
+
+推荐格式（任选其一，但需满足唯一性与稳定性）：
+
+- `human/<name>`（人类成员）
+- `ai/<role-slug>/<name-or-n>`（AI 成员）
+
+示例：
+
+- `human/Jean`（项目负责人本人可用；也可用 `human/lead-Jean`）
+- `ai/backend/01`（后端工程师）
+- `ai/frontend/01`（前端工程师）
+- `ai/architecture/01`（架构师）
+- `ai/qa-testing/01`（测试工程师）
+- `ai/devops/01`（DevOps 工程师）
+- `ai/security/01`（安全工程师）
+- `ai/product-manager/01`（产品经理）
+- `ai/ux-designer/01`（UX 设计师）
+- `ai/agent-orchestrator/01`（AI Agents 编排工程师）
+
+扩展规则：
+
+- `scope.out` 必须填写，用于控制范围蔓延。
+- `artifacts` 应尽量写可点击的路径（例如 `README.md:12`、`AGENTS.md:80`）或可复现命令（用反引号包裹）。
 
 🧾 版本管理
 
