@@ -25,6 +25,7 @@ AGENTS.template.md
   - ai/tech-lead/rep-01（技术负责人/DRI）
     - ai/backend/rep-01（后端代表）
     - ai/frontend/rep-01（前端代表）
+  - ai/agent-orchestrator/01（AI 编排负责人/跨部门）
 
 组织架构文件：coordination/org_chart.md
 
