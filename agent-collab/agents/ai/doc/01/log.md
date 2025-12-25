@@ -35,3 +35,210 @@
       to: "human/gong"
       notes:
         - "如果你希望 Lua 用于 OpenResty 场景，可再细化 OpenResty 专用约束（ngx、cosocket、共享字典等）。"
+
+## Current Entries
+
+- timestamp: 2025-12-24T17:33:04+08:00
+  agent:
+    id: ai/doc/01
+    role: 文档工程师 / Doc Writer
+  content:
+    takeover: "接管说明：接管 ai/doc/01，负责市场营销 AGENTS 规范补写。"
+    objective: "新增市场营销角色 AGENTS 规范，并与既有风格保持一致。"
+    scope:
+      in:
+        - "新增 `agent-specs/marketing/marketing-manager/AGENTS.md`"
+        - "更新 `agent-collab/agents/ai/doc/01/plan.md`"
+        - "更新 `agent-collab/agents/ai/doc/01/log.md`"
+      out:
+        - "不修改任何代码或配置文件"
+        - "不更新 README.md（如需另开任务）"
+    plan:
+      - "确认目录规划与角色命名"
+      - "编写市场营销规范主体"
+      - "复核与交付"
+    status:
+      doing:
+        - "撰写市场营销 AGENTS 规范"
+      next:
+        - "如需，将角色索引补充到 README.md"
+      done:
+        - "接管记录"
+    artifacts:
+      - "agent-specs/marketing/marketing-manager/AGENTS.md:1"
+    handoff:
+      to: "human/gong"
+      notes:
+        - "如需补产品经理/用户研究/UX 角色，可继续扩展到 product/ 与 design/ 目录。"
+
+- timestamp: 2025-12-24T17:41:04+08:00
+  agent:
+    id: ai/doc/01
+    role: 文档工程师 / Doc Writer
+  content:
+    objective: "新增产品经理 AGENTS 规范，突出用户/产品视角与可验证输出。"
+    context: "用户希望从用户或产品视角获取意见，指定 WRITE_DOC，并选择在 product 目录下完成。"
+    scope:
+      in:
+        - "完善 `agent-specs/product/product-manager/AGENTS.md`"
+        - "更新 `agent-collab/agents/ai/doc/01/plan.md`"
+        - "更新 `agent-collab/agents/ai/doc/01/log.md`"
+      out:
+        - "不修改任何代码或配置文件"
+        - "不更新 README.md（如需另开任务）"
+    status:
+      doing:
+        - ""
+      next:
+        - "如需，将角色索引补充到 README.md"
+      done:
+        - "完成市场营销 AGENTS 规范"
+        - "完成产品经理 AGENTS 规范"
+    artifacts:
+      - "agent-specs/product/product-manager/AGENTS.md:1"
+      - "agent-specs/marketing/marketing-manager/AGENTS.md:1"
+    handoff:
+      to: "human/gong"
+      notes:
+        - "如需更强调用户研究，可追加 UX/用户研究角色规范。"
+
+- timestamp: 2025-12-24T18:07:14+08:00
+  agent:
+    id: ai/doc/01
+    role: 文档工程师 / Doc Writer
+  content:
+    objective: "新增法务/Legal Counsel AGENTS 规范，强调合规与风险识别。"
+    context: "用户请求添加法务角色，WRITE_DOC 已授权。"
+    scope:
+      in:
+        - "新增 `agent-specs/legal/legal-counsel/AGENTS.md`"
+        - "更新 `agent-collab/agents/ai/doc/01/plan.md`"
+        - "更新 `agent-collab/agents/ai/doc/01/log.md`"
+      out:
+        - "不修改任何代码或配置文件"
+        - "不更新 README.md（如需另开任务）"
+    status:
+      doing:
+        - ""
+      next:
+        - "如需，将角色索引补充到 README.md"
+      done:
+        - "完成法务 AGENTS 规范"
+    artifacts:
+      - "agent-specs/legal/legal-counsel/AGENTS.md:1"
+    handoff:
+      to: "human/gong"
+      notes:
+        - "如需区分合规/隐私/合同，可拆分为子角色规范。"
+
+- timestamp: 2025-12-25T10:04:38+08:00
+  agent:
+    id: ai/doc/01
+    role: 文档工程师 / Doc Writer
+  content:
+    objective: "新增前端美化技能模板，作为前端角色的附加技能标准。"
+    context: "用户要求 skill 不依赖 AGENTS 文件，仅提供美化标准与流程。"
+    scope:
+      in:
+        - "新增 `agent-specs/engineering/frontend/frontend-ui-polish/SKILL.md`"
+        - "更新 `agent-collab/agents/ai/doc/01/plan.md`"
+        - "更新 `agent-collab/agents/ai/doc/01/log.md`"
+      out:
+        - "不修改任何代码或配置文件"
+        - "不更新 README.md（如需另开任务）"
+    status:
+      doing:
+        - ""
+      next:
+        - "如需，将角色索引补充到 README.md"
+      done:
+        - "完成前端美化技能模板"
+    artifacts:
+      - "agent-specs/engineering/frontend/frontend-ui-polish/SKILL.md:1"
+    handoff:
+      to: "human/gong"
+      notes:
+        - "如需细化为品牌规范/动效规范，可拆分为独立技能。"
+
+- timestamp: 2025-12-25T10:09:05+08:00
+  agent:
+    id: ai/doc/01
+    role: 文档工程师 / Doc Writer
+  content:
+    objective: "升级前端美化技能为大师级标准。"
+    context: "用户要求美化技能模板提升到大师级规范。"
+    scope:
+      in:
+        - "更新 `agent-specs/engineering/frontend/frontend-ui-polish/SKILL.md`"
+      out:
+        - "不修改任何代码或配置文件"
+        - "不更新 README.md（如需另开任务）"
+    status:
+      doing:
+        - ""
+      next:
+        - "如需，将角色索引补充到 README.md"
+      done:
+        - "完成大师级美化标准与审计规则补充"
+    artifacts:
+      - "agent-specs/engineering/frontend/frontend-ui-polish/SKILL.md:1"
+    handoff:
+      to: "human/gong"
+      notes:
+        - "如需扩展为品牌规范或组件库规范，可另拆分技能。"
+
+- timestamp: 2025-12-25T10:20:42+08:00
+  agent:
+    id: ai/doc/01
+    role: 文档工程师 / Doc Writer
+  content:
+    objective: "新增文档助手 AGENTS 模板，覆盖项目说明、API、前端与综合文档。"
+    context: "用户请求新增文档角色规范并选择合适目录。"
+    scope:
+      in:
+        - "新增 `agent-specs/documentation/technical-writer/AGENTS.md`"
+        - "更新 `agent-collab/agents/ai/doc/01/plan.md`"
+        - "更新 `agent-collab/agents/ai/doc/01/log.md`"
+      out:
+        - "不修改任何代码或配置文件"
+        - "不更新 README.md（如需另开任务）"
+    status:
+      doing:
+        - ""
+      next:
+        - "如需，将角色索引补充到 README.md"
+      done:
+        - "完成文档助手 AGENTS 模板"
+    artifacts:
+      - "agent-specs/documentation/technical-writer/AGENTS.md:1"
+    handoff:
+      to: "human/gong"
+      notes:
+        - "如需中文版本或更细分的文档类型，可继续扩展。"
+
+- timestamp: 2025-12-25T10:24:07+08:00
+  agent:
+    id: ai/doc/01
+    role: 文档工程师 / Doc Writer
+  content:
+    objective: "更新 AGENTS.template.md，说明新角色需创建空 AGENTS.md。"
+    context: "用户要求在模板中明确创建角色后会创建空 AGENTS.md 文件。"
+    scope:
+      in:
+        - "更新 `AGENTS.template.md`"
+      out:
+        - "不修改任何代码或配置文件"
+        - "不更新 README.md（如需另开任务）"
+    status:
+      doing:
+        - ""
+      next:
+        - "如需，将角色索引补充到 README.md"
+      done:
+        - "补充角色创建后的 AGENTS.md 约定"
+    artifacts:
+      - "AGENTS.template.md:36"
+    handoff:
+      to: "human/gong"
+      notes:
+        - "如需同步到 AGENTS.md，可另行裁剪更新。"
