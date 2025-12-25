@@ -9,6 +9,10 @@ agents-spec-repo 用于管理 AI Agents 在不同工程/产品角色下的行为
 - 缺少规范会导致风格混乱、架构不一致、测试质量下滑、行为不可控及安全风险
 - 通过角色分离（Role-Based AI Behavior）让输出稳定、专业，便于审计与扩展
 
+## 🔧 Skills（Codex 技能）
+本仓库支持将项目规范与工作流沉淀为 Codex Skills，便于外部开发者或客户通过 AI 直接与项目交互。
+参考： [OpenAI Codex Skills](https://developers.openai.com/codex/skills)
+
 ## 📁 仓库目录结构
 ```text
 agents-spec-repo/

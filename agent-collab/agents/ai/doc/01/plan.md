@@ -9,6 +9,8 @@
 - 在 `AGENTS.template.md` 补充“新角色创建空 AGENTS.md”规则。
 - 在 `agent-specs/engineering/crawler-engineer/AGENTS.md` 与 `agent-specs/data/crawler-engineer/AGENTS.md` 产出爬虫工程师规范。
 - 更新 `README.md`，补充新角色索引与项目介绍。
+- 在 `agent-specs/documentation/technical-writer/project-skill-author/SKILL.md` 产出项目技能模板。
+- 在 `README.md` 增加 Codex Skills 说明与官方链接。
 
 ## Deliverables
 - `agent-specs/marketing/marketing-manager/AGENTS.md`
@@ -20,6 +22,8 @@
 - `agent-specs/engineering/crawler-engineer/AGENTS.md`
 - `agent-specs/data/crawler-engineer/AGENTS.md`
 - `README.md`
+- `agent-specs/documentation/technical-writer/project-skill-author/SKILL.md`
+- `README.md`（Skills 说明）
 
 ## Milestones
 - 完成市场营销规范
@@ -30,6 +34,8 @@
 - 完成 AGENTS.template.md 规则补充
 - 完成爬虫工程师双版本规范
 - 完成 README.md 索引与介绍更新
+- 完成 project-skill-author 技能模板
+- 完成 README.md Skills 介绍补充
 
 ## Dependencies
 - 已确认 WRITE_DOC 与目录规划（marketing/product/legal/frontend/documentation）

@@ -300,3 +300,58 @@
       to: "human/gong"
       notes:
         - "如需补充 Risk & Compliance 角色，可新增 legal/ 或 risk/ 目录。"
+
+- timestamp: 2025-12-25T14:32:57+08:00
+  agent:
+    id: ai/doc/01
+    role: 文档工程师 / Doc Writer
+  content:
+    objective: "新增文档角色的技能模板，用于为项目生成可复用的 Skill 包。"
+    context: "用户希望文档角色可为任意项目创建 Skill 文档供外部开发者使用。"
+    scope:
+      in:
+        - "新增 `agent-specs/documentation/technical-writer/project-skill-author/SKILL.md`"
+        - "更新 `agent-collab/agents/ai/doc/01/plan.md`"
+        - "更新 `agent-collab/agents/ai/doc/01/log.md`"
+      out:
+        - "不修改任何代码或配置文件"
+        - "不更新 README.md（如需另开任务）"
+    status:
+      doing:
+        - ""
+      next:
+        - ""
+      done:
+        - "完成 project-skill-author 技能模板"
+    artifacts:
+      - "agent-specs/documentation/technical-writer/project-skill-author/SKILL.md:1"
+    handoff:
+      to: "human/gong"
+      notes:
+        - "如需对接实际 API 文档，可添加 references/ 目录与示例。"
+
+- timestamp: 2025-12-25T14:35:23+08:00
+  agent:
+    id: ai/doc/01
+    role: 文档工程师 / Doc Writer
+  content:
+    objective: "在 README.md 增加 Skills 说明与官方链接。"
+    context: "用户要求补充 Codex Skills 介绍与链接。"
+    scope:
+      in:
+        - "更新 `README.md`"
+      out:
+        - "不修改任何代码或配置文件"
+    status:
+      doing:
+        - ""
+      next:
+        - ""
+      done:
+        - "新增 Skills 介绍与 OpenAI 链接"
+    artifacts:
+      - "README.md:11"
+    handoff:
+      to: "human/gong"
+      notes:
+        - "如需加入示例技能路径，可在 README.md 追加示例段落。"
