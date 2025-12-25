@@ -76,7 +76,7 @@ agents-spec-repo/
 | AI 工程师 / LLM Engineer | 构建 AI pipeline、RAG、Prompt 工程 | `agent-specs/ai-advanced/llm-engineer/AGENTS.md` |
 | Prompt Engineer | 设计与优化提示，提升模型行为 | `agent-specs/ai-advanced/prompt-engineer/AGENTS.md` |
 | AI Agents 编排工程师 | 多智能体系统、调度策略、上下文框架 | `agent-specs/ai-advanced/agent-orchestrator/AGENTS.md` |
-| AI 评估工程师 | 模型评测、对齐、安全性验证 | `agent-specs/ai-advanced/ai-evaluator/AGENTS.md` |
+| AI 评估工程师 | 模型/方案评测、基准对比、质量分析 | `agent-specs/ai-advanced/ai-evaluator/AGENTS.md` |
 | 模型训练工程师 | 预训练、微调、蒸馏流程 | `agent-specs/ai-advanced/model-training-engineer/AGENTS.md` |
 | （附）LLM Engineer 深入版 | 细分的 AI 子规范 | `agent-specs/ai-advanced/llm-engineer/ai/AGENTS.md` |
 
@@ -87,6 +87,7 @@ agents-spec-repo/
 | 产品负责人 | 拥有业务方向与迭代决策权 | `agent-specs/product/product-owner/AGENTS.md` |
 | 项目经理 | 协调团队、排期、进度管理 | `agent-specs/product/project-manager/AGENTS.md` |
 | Scrum Master | 敏捷流程、站会、迭代仪式 | `agent-specs/product/scrum-master/AGENTS.md` |
+| 实验负责人 / A/B 测试 | 实验设计、指标与统计评估 | `agent-specs/product/experiment-manager/AGENTS.md` |
 
 ### 📣 市场与增长类（Marketing & Growth）
 | 角色 | 职责 | AGENTS 路径 |
@@ -110,7 +111,7 @@ agents-spec-repo/
 | 角色 | 职责 | AGENTS 路径 |
 | --- | --- | --- |
 | 运维工程师 | 服务器、生产环境、部署 | `agent-specs/infra/ops-engineer/AGENTS.md` |
-| 发布工程师 | 发布流程、版本控制、变更管理 | `agent-specs/infra/release-engineer/AGENTS.md` |
+| 发布工程师 | 灰度/金丝雀发布、变更管理、回滚策略 | `agent-specs/infra/release-engineer/AGENTS.md` |
 | 网络工程师 | 网络架构、CDN、路由与安全 | `agent-specs/infra/network-engineer/AGENTS.md` |
 | 数据库管理员 | 数据库调优、备份恢复、查询优化 | `agent-specs/infra/database-admin/AGENTS.md` |
 

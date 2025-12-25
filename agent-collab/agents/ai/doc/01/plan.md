@@ -14,6 +14,8 @@
 - 在 `agent-specs/product/experiment-manager/AGENTS.md` 产出 A/B 测试规范。
 - 更新 `agent-specs/ai-advanced/ai-evaluator/AGENTS.md`，补齐评测规范。
 - 更新 `agent-specs/infra/release-engineer/AGENTS.md`，补齐灰度/金丝雀规范。
+- 将 A/B 测试角色补充到 README 索引。
+- 将 AI 评估与灰度发布角色在 README 索引中明确说明。
 
 ## Deliverables
 - `agent-specs/marketing/marketing-manager/AGENTS.md`
@@ -30,6 +32,8 @@
 - `agent-specs/product/experiment-manager/AGENTS.md`
 - `agent-specs/ai-advanced/ai-evaluator/AGENTS.md`
 - `agent-specs/infra/release-engineer/AGENTS.md`
+- `README.md`（experiment-manager 索引）
+- `README.md`（ai-evaluator / release-engineer 描述）
 
 ## Milestones
 - 完成市场营销规范
@@ -43,6 +47,8 @@
 - 完成 project-skill-author 技能模板
 - 完成 README.md Skills 介绍补充
 - 完成 A/B 测试、评测与灰度发布规范
+- 完成 A/B 测试角色索引补充
+- 完成 AI 评估与灰度发布索引说明
 
 ## Dependencies
 - 已确认 WRITE_DOC 与目录规划（marketing/product/legal/frontend/documentation）

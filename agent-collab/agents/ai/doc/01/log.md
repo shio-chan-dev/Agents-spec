@@ -388,3 +388,56 @@
       to: "human/gong"
       notes:
         - "如需数据侧实验角色，可新增 data/experiment-analyst。"
+
+- timestamp: 2025-12-25T15:31:43+08:00
+  agent:
+    id: ai/doc/01
+    role: 文档工程师 / Doc Writer
+  content:
+    objective: "将实验负责人角色加入 README 索引。"
+    context: "用户要求补充 A/B 测试角色到索引。"
+    scope:
+      in:
+        - "更新 `README.md`"
+      out:
+        - "不修改任何代码或配置文件"
+    status:
+      doing:
+        - ""
+      next:
+        - ""
+      done:
+        - "补充 experiment-manager 角色索引"
+    artifacts:
+      - "README.md:88"
+    handoff:
+      to: "human/gong"
+      notes:
+        - ""
+
+- timestamp: 2025-12-25T15:32:48+08:00
+  agent:
+    id: ai/doc/01
+    role: 文档工程师 / Doc Writer
+  content:
+    objective: "将实验/评估/灰度三个角色在 README 索引中补充为明确描述。"
+    context: "用户要求三个角色都加入索引。"
+    scope:
+      in:
+        - "更新 `README.md`"
+      out:
+        - "不修改任何代码或配置文件"
+    status:
+      doing:
+        - ""
+      next:
+        - ""
+      done:
+        - "完善 AI 评估与发布工程师职责描述"
+    artifacts:
+      - "README.md:66"
+      - "README.md:126"
+    handoff:
+      to: "human/gong"
+      notes:
+        - ""
