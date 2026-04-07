@@ -1,0 +1,4 @@
+interface:
+  display_name: "Human-Core Feature Wave"
+  short_description: "v0.1.19 - Land one human-led AI feature wave on main"
+  default_prompt: "Use $human-core-feature-wave-skill to plan or teach one human-led feature landing wave where AI drafts stay reference-only and the core is reimplemented on main with explicit verification and commit checkpoints."
